@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Function Currying in JS</title>
+    </head>
+
+    <body>
+
+        <h1>Function Currying in JS</h1>
+
+        <button onclick="watchOutput()">Click</button>
+
+        <script>
+
+            // Normal Function
+            // function add(a, b) {
+            //     return a + b;
+            // }
+
+            // console.log(add(10, 20));
+
+
+            // Function Currying
+            // function add(a) {
+            //     return function(b) {
+            //         return a + b;
+            //     }
+            // }
+
+            // console.log(add(10)(100));
+
+
+            // Store first function result
+            // let out = add(10);
+
+
+            // Function for button
+            // function watchOutput() {
+            //     console.log(out(200));
+            // }
+
+
+            // Function Currying Example
+
+            function logs(level) {
+
+                return function(msg) {
+
+                    return "Info : " + level + ", msg : " + msg;
+
+                }
+
+            }
+
+            console.log(
+                logs("login")("user logged in successfully")
+            );
+
+        </script>
+
+    </body>
+</html>
