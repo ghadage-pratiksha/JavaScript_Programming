@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>This keyword with arrow function</title>
+</head>
+
+<body>
+    <h1>This keyword with arrow function</h1>
+    <script>
+        // const userData={
+        // userName: "Pratiksha",
+                // getName:function(){
+                //     console.log(this.userName);
+
+                // }
+            userName: "Pratiksha"
+            const userData = {
+            userName: "Pratiksha Ghadage",
+        //     getName: () => {
+        //         console.log(this.userName)
+        //     }
+        print: function(){
+            setTimeout(function(){
+                console.log(this.userName);
+                
+            },1000);
+        }
+        }
+        userData.getName()
+    </script>
+</body>
+
+</html>
