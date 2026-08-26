@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Classes in JavaScript</title>
+</head>
+
+<body>
+
+    <h1>Classes in JavaScript</h1>
+
+    <script>
+
+        // Creating a Class
+        class User {
+
+            // Constructor
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            // Method
+            showDetails() {
+                console.log("My name is " + this.name);
+                console.log("My age is " + this.age);
+            }
+
+            // Another Method
+            sayHello() {
+                console.log("Hello " + this.name);
+            }
+        }
+
+        // Creating Object
+        let user1 = new User("Pratiksha Ghadage", 21);
+
+        // Calling Methods
+        user1.showDetails();
+        user1.sayHello();
+
+    </script>
+
+</body>
+</html>
