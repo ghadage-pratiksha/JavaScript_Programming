@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Session Storage</title>
+</head>
+
+<body>
+
+    <h1 id="heading">Session Storage</h1>
+
+    <input type="text" id="user-name" placeholder="Enter name">
+    <button onclick="storeData()">Show User Name</button>
+
+    <script>
+
+        function showData() {
+            let sessionData = sessionStorage.getItem("user-name");
+            document.querySelector("#heading").innerHTML = sessionData;
+        }
+
+        showData();
+
+        function storeData() {
+            let data = document.querySelector("#user-name").value;
+
+            sessionStorage.setItem("user-name", data);
+
+            console.log(data);
+
+            document.querySelector("#heading").innerHTML = data;
+        }
+
+    </script>
+
+</body>
+</html>

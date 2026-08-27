@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Query Selector</title>
+</head>
+<body>
+
+    <!-- Heading element -->
+    <h1>Heading Text</h1>
+
+    <!-- h2 and h3 have the same class name -->
+    <h2 class="heading">Heading 2</h2>
+    <h3 class="heading">Heading 3</h3>
+
+    <script>
+
+        // querySelector() is used to select the FIRST matching element.
+        // Here, it selects the first <h1> element.
+        let heading = document.querySelector('h1').innerText;
+
+        // Print the text of the selected h1 element in the console.
+        console.log(heading);
+
+
+        // querySelectorAll() is used to select ALL matching elements.
+        // Here, it selects all elements having the class "heading".
+        let headings = document.querySelectorAll('.heading');
+
+
+        // for...of loop is used to access each element one by one.
+        for (let node of headings) {
+
+            // innerText gets the text from the current element.
+            console.log(node.innerText);
+
+        }
+
+    </script>
+
+</body>
+</html>

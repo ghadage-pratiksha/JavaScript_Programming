@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rest vs Spread Operator</title>
+</head>
+<body>
+
+    <h1>Rest vs Spread Operator</h1>
+
+    <script>
+
+        // =========================
+        // SPREAD OPERATOR
+        // =========================
+
+        let fruits = ["Apple", "Banana", "Mango"];
+
+        let newFruits = [...fruits, "Orange"];
+
+        console.log("Spread Array:", newFruits);
+
+
+        // Merge Arrays
+
+        let boys = ["Rahul", "Amit"];
+        let girls = ["Pratiksha", "Sneha"];
+
+        let students = [...boys, ...girls];
+
+        console.log("Merged Array:", students);
+
+
+        // Spread with Object
+
+        let user = {
+            name: "Pratiksha",
+            age: 21
+        };
+
+        let newUser = {
+            ...user,
+            city: "Pune"
+        };
+
+        console.log("Spread Object:", newUser);
+
+
+        // Merge Objects
+
+        let address = {
+            city: "Pune",
+            pincode: 411001
+        };
+
+        let userDetails = {
+            ...user,
+            ...address
+        };
+
+        console.log("Merged Object:", userDetails);
+
+
+        // =========================
+        // REST OPERATOR
+        // =========================
+
+        function add(...numbers) {
+
+            console.log("Rest Array:", numbers);
+
+            let sum = 0;
+
+            for (let number of numbers) {
+                sum += number;
+            }
+
+            console.log("Sum:", sum);
+        }
+
+        add(10, 20, 30, 40);
+
+
+        // Rest with Parameters
+
+        function showStudents(first, second, ...remaining) {
+
+            console.log("First:", first);
+            console.log("Second:", second);
+            console.log("Remaining:", remaining);
+
+        }
+
+        showStudents(
+            "Rahul",
+            "Amit",
+            "Pratiksha",
+            "Sneha",
+            "Pooja"
+        );
+
+
+        // Rest with Array Destructuring
+
+        let numbers = [10, 20, 30, 40, 50];
+
+        let [first, second, ...remaining] = numbers;
+
+        console.log("First:", first);
+        console.log("Second:", second);
+        console.log("Remaining:", remaining);
+
+
+        // Rest with Object Destructuring
+
+        let student = {
+            name: "Pratiksha",
+            age: 21,
+            city: "Pune",
+            course: "BCA"
+        };
+
+        let { name, ...otherDetails } = student;
+
+        console.log("Name:", name);
+        console.log("Other Details:", otherDetails);
+
+    </script>
+
+</body>
+</html>
