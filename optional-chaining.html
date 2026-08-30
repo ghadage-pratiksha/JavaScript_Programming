@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Chaining and Nullish Coalescing</title>
+</head>
+<body>
+
+    <h1>Optional Chaining & Nullish Coalescing</h1>
+
+    <script>
+
+        // Optional Chaining
+
+        let user = {
+            name: "Pratiksha",
+            age: 21,
+            address: {
+                city: "Pune",
+                pincode: 411001
+            }
+        };
+
+        console.log(user?.name);
+        console.log(user?.address?.city);
+        console.log(user?.address?.pincode);
+
+        console.log(user?.contact?.phone);
+
+
+        // Optional Chaining with Array
+
+        let students = [
+            {
+                name: "Pratiksha",
+                age: 21
+            },
+            {
+                name: "Rahul",
+                age: 22
+            }
+        ];
+
+        console.log(students[0]?.name);
+        console.log(students[1]?.name);
+        console.log(students[2]?.name);
+
+
+        // Optional Chaining with Function
+
+        let person = {
+            name: "Pratiksha"
+        };
+
+        person.sayHello?.();
+
+
+        // Nullish Coalescing
+
+        let username;
+
+        let result = username ?? "Guest";
+
+        console.log(result);
+
+
+        // Null Value
+
+        let city = null;
+
+        let userCity = city ?? "Pune";
+
+        console.log(userCity);
+
+
+        // Zero Value
+
+        let age = 0;
+
+        console.log(age ?? 18);
+
+
+        // Empty String
+
+        let name = "";
+
+        console.log(name ?? "Guest");
+
+
+        // False Value
+
+        let isLogin = false;
+
+        console.log(isLogin ?? true);
+
+
+        // Difference between || and ??
+
+        let number = 0;
+
+        console.log(number || 100);
+        console.log(number ?? 100);
+
+
+        let text = "";
+
+        console.log(text || "Hello");
+        console.log(text ?? "Hello");
+
+
+        // Optional Chaining + Nullish Coalescing
+
+        let employee = {
+            name: "Pratiksha",
+            department: {
+                name: "Development"
+            }
+        };
+
+        let department =
+            employee?.department?.name ?? "Not Available";
+
+        console.log(department);
+
+
+        let salary =
+            employee?.details?.salary ?? 25000;
+
+        console.log(salary);
+
+
+        let phone =
+            employee?.contact?.phone ?? "Phone Not Available";
+
+        console.log(phone);
+
+
+        // Nested Object
+
+        let student = {
+            name: "Pratiksha",
+            education: {
+                course: "BCA",
+                college: {
+                    name: "SPMM"
+                }
+            }
+        };
+
+        console.log(student?.education?.course);
+
+        console.log(
+            student?.education?.college?.name
+        );
+
+        console.log(
+            student?.education?.college?.address ?? "Address Not Available"
+        );
+
+    </script>
+
+</body>
+</html>

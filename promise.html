@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Promise in JavaScript</title>
+    </head>
+
+    <body>
+
+        <h1>Promise in JavaScript</h1>
+
+        <button onclick="handleLogin()">Login</button>
+
+        <script>
+
+            function userLogin() {
+
+                let email = "pghadge.com";
+                let password = "123456789";
+
+                const loginPromise = new Promise((resolve, reject) => {
+
+                    setTimeout(() => {
+
+                        resolve({
+                            login: true,
+                            id: 100
+                        });
+
+                    }, 3000);
+
+                });
+
+                return loginPromise;
+            }
+
+
+            function handleLogin() {
+
+                const loginPromise = userLogin();
+
+                loginPromise.then((result) => {
+
+                    console.log(result);
+
+                    if (result.login) {
+
+                        alert("Go to profile page");
+
+                    } else {
+
+                        alert("Try again");
+
+                    }
+
+                });
+
+            }
+
+        </script>
+
+    </body>
+</html>
