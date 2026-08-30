@@ -1,0 +1,40 @@
+<htnl>
+
+    <head>
+        <!-- <script>
+            document.getElementById("user").style.color = "orange"
+        </script> -->
+    </head>
+
+    <body>
+        <h1>Input filed style</h1>
+        <input type="text" id="user" placeholder="enter user name"><br>
+
+        <button onclick="handleStyle()">Update Style</button><br>
+
+        <input oninput="handleWidth(event)" type="range" step="10" max="300" min="50px"><br>
+
+        <input onchange="handleMargin(event)" type="range" step="10" max="100" min="0px"><br>
+
+        <script>
+            document.getElementById("user").style.color = "orange";
+            function handleStyle(){
+                let inputElStyle=document.getElementById("user").style
+                inputElStyle.color = "green";
+                inputElStyle.width= "200px";
+               inputElStyle.height = "50px";
+            }
+            function handleWidth(){
+                
+                let width=event.target.value + "px"
+                let inputElStyle=document.getElementById("user").style.width=Width
+            }
+            function handleMargin(){
+               
+                let marginTop=event.target.value + "px"
+                let inputElStyle=document.getElementById("user").style.marginTop = marginTop
+            }
+
+        </script>
+    </body>
+    <html>
