@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation</title>
+</head>
+
+<body>
+
+    <h1>Form Validation</h1>
+
+    <input type="text" id="name" placeholder="Enter name">
+    <br><br>
+
+    <input type="text" id="email" placeholder="Enter email">
+    <br><br>
+
+    <input type="password" id="password" placeholder="Enter password">
+    <br><br>
+
+    <button id="submit">Submit</button>
+
+    <script>
+
+        let name = document.querySelector("#name");
+        let email = document.querySelector("#email");
+        let password = document.querySelector("#password");
+        let submit = document.querySelector("#submit");
+
+        // Initially disable submit button
+        submit.disabled = true;
+
+        // Check input values whenever user types
+        name.addEventListener("input", checkInputValue);
+        email.addEventListener("input", checkInputValue);
+        password.addEventListener("input", checkInputValue);
+
+        function checkInputValue() {
+
+            // Check whether all fields have values
+            if (name.value && email.value && password.value) {
+
+                // Enable submit button
+                submit.disabled = false;
+
+            } else {
+
+                // Disable submit button
+                submit.disabled = true;
+            }
+        }
+
+        // Submit button click event
+        submit.addEventListener("click", function() {
+
+            // Check name length
+            if (name.value.length < 3) {
+                alert("Name must contain at least 3 characters");
+                return;
+            }
+
+            // Check email format
+            if (!email.value.includes("@")) {
+                alert("Please enter a valid email");
+                return;
+            }
+
+            // Check password length
+            if (password.value.length < 6) {
+                alert("Password must contain at least 6 characters");
+                return;
+            }
+
+            alert("Form submitted successfully!");
+
+        });
+
+    </script>
+
+</body>
+</html>
