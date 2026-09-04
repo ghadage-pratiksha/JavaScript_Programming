@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Throttling in JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Throttling in JavaScript</h1>
+
+        <button id="btn">Click Me</button>
+
+        <script>
+            let canClick = true;
+
+            document.getElementById("btn").addEventListener("click", function() {
+
+                if (canClick) {
+                    console.log("Button clicked");
+
+                    canClick = false;
+
+                    setTimeout(function() {
+                        canClick = true;
+                    }, 2000);
+                }
+
+            });
+        </script>
+    </body>
+</html>
