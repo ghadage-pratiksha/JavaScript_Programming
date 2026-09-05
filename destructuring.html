@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+
+    <h1>JavaScript Destructuring</h1>
+
+    <script>
+
+        // Array Destructuring
+
+        let fruits = ["Apple", "Banana", "Mango"];
+
+        let [fruit1, fruit2, fruit3] = fruits;
+
+        console.log(fruit1);
+        console.log(fruit2);
+        console.log(fruit3);
+
+
+        // Skip Array Value
+
+        let numbers = [10, 20, 30, 40];
+
+        let [first, , third, fourth] = numbers;
+
+        console.log(first);
+        console.log(third);
+        console.log(fourth);
+
+
+        // Rest Operator with Array Destructuring
+
+        let marks = [80, 75, 90, 85, 95];
+
+        let [english, maths, ...remainingMarks] = marks;
+
+        console.log(english);
+        console.log(maths);
+        console.log(remainingMarks);
+
+
+        // Default Value
+
+        let colors = ["Red", "Blue"];
+
+        let [color1, color2, color3 = "Green"] = colors;
+
+        console.log(color1);
+        console.log(color2);
+        console.log(color3);
+
+
+        // Object Destructuring
+
+        let user = {
+            name: "Pratiksha",
+            age: 21,
+            city: "Pune"
+        };
+
+        let { name, age, city } = user;
+
+        console.log(name);
+        console.log(age);
+        console.log(city);
+
+
+        // Different Variable Name
+
+        let student = {
+            name: "Pratiksha",
+            age: 21
+        };
+
+        let {
+            name: studentName,
+            age: studentAge
+        } = student;
+
+        console.log(studentName);
+        console.log(studentAge);
+
+
+        // Default Value in Object
+
+        let employee = {
+            name: "Rahul",
+            salary: 25000
+        };
+
+        let {
+            name: employeeName,
+            salary,
+            city: employeeCity = "Pune"
+        } = employee;
+
+        console.log(employeeName);
+        console.log(salary);
+        console.log(employeeCity);
+
+
+        // Nested Object Destructuring
+
+        let person = {
+            name: "Pratiksha",
+            address: {
+                city: "Pune",
+                pincode: 411001
+            }
+        };
+
+        let {
+            name: personName,
+            address: {
+                city: personCity,
+                pincode
+            }
+        } = person;
+
+        console.log(personName);
+        console.log(personCity);
+        console.log(pincode);
+
+
+        // Function Parameter Destructuring
+
+        function showUser({ name, age, city }) {
+
+            console.log("Name:", name);
+            console.log("Age:", age);
+            console.log("City:", city);
+
+        }
+
+        let userDetails = {
+            name: "Pratiksha",
+            age: 21,
+            city: "Pune"
+        };
+
+        showUser(userDetails);
+
+    </script>
+
+</body>
+</html>
