@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Debouncing in JavaScript</title>
+    </head>
+
+    <body>
+        <h1>Debouncing in JavaScript</h1>
+
+        <input type="text" id="search" placeholder="Search...">
+
+        <script>
+            let timer;
+
+            document.getElementById("search").addEventListener("input", function() {
+
+                clearTimeout(timer);
+
+                timer = setTimeout(function() {
+                    console.log("Searching for:", document.getElementById("search").value);
+                }, 1000);
+
+            });
+        </script>
+    </body>
+</html>
