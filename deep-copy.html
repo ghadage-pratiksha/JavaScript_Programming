@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deep Copy</title>
+</head>
+<body>
+
+    <h1>Deep Copy</h1>
+
+    <script>
+
+        let user = {
+            name: "Pratiksha",
+            age: 21,
+            address: {
+                city: "Pune"
+            }
+        };
+
+        let userCopy = structuredClone(user);
+
+        userCopy.name = "Rahul";
+        userCopy.address.city = "Mumbai";
+
+        console.log("Original User:", user);
+        console.log("Copied User:", userCopy);
+
+    </script>
+
+</body>
+</html>
