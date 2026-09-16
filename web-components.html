@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Web Components</title>
+</head>
+
+<body>
+
+    <h1>Web Components</h1>
+
+    <user-card></user-card>
+    <user-card></user-card>
+
+    <script>
+
+        class UserCard extends HTMLElement {
+
+            connectedCallback() {
+
+                this.innerHTML = `
+                    <div>
+                        <h2>Pratiksha Ghadage</h2>
+                        <p>JavaScript Developer</p>
+                        <button>View Profile</button>
+                    </div>
+                `;
+
+            }
+
+        }
+
+        customElements.define("user-card", UserCard);
+
+    </script>
+
+</body>
+</html>
